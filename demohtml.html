@@ -1,0 +1,238 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+    <style>
+
+    .parent-container{
+        width: 100%;
+        height:100%;
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        position: fixed; /* Stay in place */
+        display:none;
+        top: 0px;
+        left: 0px;
+        z-index: 1; /* Sit on top */
+    }
+
+    .container{
+        position: relative;
+        width: 30%;
+        height: 30%;
+        border: 1px solid black;
+        margin: auto;
+        background-color: white;
+        margin-top: 100px;
+        animation-name: animatetop;
+        animation-duration: 0.4s
+    }
+    @keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+    }
+    .pop-up{
+        width: 100%;
+        height: 100%;
+    }
+    .pop-upheader{
+        background-color: red;
+        width: 100%;
+        text-align: right;
+       
+    }
+    .close-button{
+        height: 100%;
+        font-size: 25px;
+    }
+
+
+    </style>
+</head>
+
+<body>
+    <button type="button" class="button">click me</button>
+
+    <div class="parent-container" id="mymodal">
+        <div class="container">
+            <div class="pop-upheader"><button class="close-button">&times;</button></div>
+
+            <div class="pop-up" id="idpop-up">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates quisquam quasi obcaecati. Velit deserunt maxime, ipsum, nobis est aperiam amet odit quis reprehenderit voluptate necessitatibus distinctio, quas adipisci ipsam laboriosam.
+            </div>  
+        </div>  
+    </div>
+
+    <script>
+    $(document).ready(function(){
+    $(".button").click(function(){
+        $(".parent-container").fadeIn();
+        // $(".container").fadeIn(300, function(){ $(this).find("div").css("display","block");});
+
+    });
+
+    $(".close-button").click(function(){
+        $(".parent-container").fadeOut();
+
+    });
+
+    var parentcontainer = document.getElementById('mymodal')
+    window.onclick = function(event) {
+    if (event.target == parentcontainer) {
+        $(".parent-container").fadeOut();
+    }
+    }
+    });
+
+    </script>
+</body>
+</html> -->
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        .carddrop-content{
+            display:none;
+            border: 1px solid black;
+            width: 5%;
+        }
+
+        .carddrop-content{
+            border: 1px solid black;
+            width: 10%;
+            transition: .5s height ease;
+        }
+
+     
+    </style>
+
+</head>
+<body>
+    <div class="carddrop-container">
+        <div class="carddrop-head">
+            <h3><a href="#" onclick="carddrop()">Click me</a></h3>
+        </div>
+
+        <div class="carddrop-content" id="card">
+            <h3>data 1</h3>
+            <h3>data 2</h3>
+            <h3>data 3</h3>
+        </div>
+    </div>
+
+    <button value="" name=""></button>
+    <script>
+        
+
+    </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <style>
+        .active{
+            background-color: blue;
+        }
+        button{
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button class="page previous" value="previous" onclick="page(this)">Previous</button>
+        <button class="page page1 active" value="1" onclick="page(this)">1</button>
+        <button class="page page2" value="2" onclick="page(this)">2</button>
+        <button class="page page3" value="3" onclick="page(this)">3</button>
+        <button class="page next" value="next" onclick="page(this)">Next</button>
+    </div>
+
+
+    <script>
+        var pageno = 5;
+        function page(e){
+
+        
+            if($(e).val() != 'previous' && $(e).val() != 'next'){    
+                $('.page').removeClass('active');
+                $(e).addClass('active');
+            }
+
+            if($(e).val() == 'next' && $('.active').next().val() == 'next'){
+                console.log($(e).val());
+                if((parseInt($(e).prev().val(),10) + 1)<=pageno){
+                    $('.page1').html(parseInt($(e).prev().val(),10) + 1);
+                    $('.page1').val(parseInt($(e).prev().val(),10) + 1);
+                }
+                else
+                    $('.page1').css("display", "none");
+
+                if((parseInt($(e).prev().val(),10) + 2)<=pageno){
+                    $('.page2').html(parseInt($(e).prev().val(),10) + 2);
+                    $('.page2').val(parseInt($(e).prev().val(),10) + 2);
+                }
+                else
+                    $('.page2').css("display", "none");
+
+                if((parseInt($(e).prev().val(),10) + 3)<=pageno){
+                    $('.page3').html(parseInt($(e).prev().val(),10) + 3);
+                    $('.page3').val(parseInt($(e).prev().val(),10) + 3);
+                }
+                else
+                    $('.page3').css("display", "none");
+                
+                
+                
+                $('.page').removeClass('active');
+                $('.page1').addClass('active');
+            }
+            else{
+                if($(e).val() == 'next'){
+                    if($('.active').next().val() != 'next'){
+                        var activenext = $('.active').next();
+                        $('.page').removeClass('active');
+                        $(activenext).addClass('active');
+                    }
+                    else{
+                        console.log('sorry');
+                    }
+                }
+            }
+        
+
+        if($(e).val() == 'previous' && $('.page1').val()>1){
+            console.log($(e).val());
+            $('.page3').html(parseInt($(e).next().val(),10) - 1);
+            $('.page2').html(parseInt($(e).next().val(),10) - 2);
+            $('.page1').html(parseInt($(e).next().val(),10) - 3);
+            $('.page3').val(parseInt($(e).next().val(),10) - 1);
+            $('.page2').val(parseInt($(e).next().val(),10) - 2);
+            $('.page1').val(parseInt($(e).next().val(),10) - 3);
+        }
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.button{
+  cursor: pointer;
+}
+
+.card-subcontainer{
+    display: flex;
+    margin-left: 10px;
+    flex-basis: 348px;
+    /* flex-grow: 1; */
+    min-height: 190px;	
+    box-shadow: 3px 3px 5px rgba(0,0,0,.2);
+    margin-top: 20px;
+}
+
+.profile{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items: center;
+    background-color: pink;
+    width: 108px;	
+    border-top-left-radius:5px;
+    border-bottom-left-radius:5px;  
+}
+.profiledata{
+    color: #FAD0C9FF;
+    display: flex;
+    flex-direction: column;
+    background-color:#6E6E6DFF;
+    flex: 1;
+    border-top-right-radius:5px;
+    border-bottom-right-radius:5px;
+    padding-left: 10px;
+    position: relative;
+}
+
+.avatar {
+
+  border-radius:50%;
+  max-width:80px;
+}
+
+.profiledata-links{
+    position: absolute;
+    bottom: 5px;
+    right: 12px;
+    display: flex;
+    flex: 1;
+    margin-left: 50px; 
+}
+
+.button {
+  background-color: #F2AA4CFF; /* Green */
+  border: none;
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 12px;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.id{
+    background-color: grey;
+    border-radius: 5px; 
+    text-align:center; 
+    padding: 3px;
+    width: 100px;  
+}
+
+.checkbox{
+  width: 95%;
+  text-align: right;
+  z-index:1;
+} 
+
+.checkbox input{
+  width: 15px;
+  height: 15px;
+}
+
+.profiledata-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.carddrop-content{
+  display:none;
+  border: 1px solid black;
+  width: 81px;
+  z-index: 100;
+  position: absolute;
+  margin-left: 10px;
+  margin-top: 7px;
+  background-color: white;
+}
+
+.carddrop-container{
+  position: relative;
+}
+
+
+.dropshow{
+  display: block;
+}
+
+@media only screen and (max-width: 1518px) {
+  .card-subcontainer {
+    flex-grow: 1;
+  }
+}
+
+

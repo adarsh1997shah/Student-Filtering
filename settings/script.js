@@ -1,0 +1,2 @@
+
+$(".right").css('display','none');

@@ -1,0 +1,22 @@
+.body-container{
+    margin-top: 50px;
+    display: flex;
+}
+
+.col1{
+    flex: 1;
+}
+
+.left-section{
+    background-color: #c6d0da;
+    flex: 4;
+}
+
+.right-section{
+    padding-left: 50px;
+    flex: 8;
+}
+
+label{
+    display: block;
+}
